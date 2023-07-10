@@ -335,7 +335,7 @@ fn random_addition_tests<G: CurveProjective>() {
             assert_eq!(aplusa, aplusamixed);
         }
 
-        let mut tmp = vec![G::zero(); 6];
+        let mut tmp = [G::zero(); 6];
 
         // (a + b) + c
         tmp[0] = a;
@@ -618,6 +618,7 @@ fn test_g1_sum_of_products() {
             let scalars: Vec<&[u64; 4]> = scalars_fr_repr.iter().map(|s| &s.0).collect();
 
             let mut desired_result = G1::zero();
+            #[allow(clippy::needless_range_loop)]
             for i in 0..num_points {
                 desired_result.add_assign_mixed(&points[i]);
             }
@@ -654,6 +655,7 @@ fn test_g1_sum_of_products() {
             let scalars: Vec<&[u64; 4]> = scalars_fr_repr.iter().map(|s| &s.0).collect();
 
             let mut desired_result = G1::zero();
+            #[allow(clippy::needless_range_loop)]
             for i in 0..num_points {
                 if i % 2 == 1 {
                     desired_result.add_assign_mixed(&points[i]);
@@ -988,6 +990,7 @@ fn test_g2_sum_of_products() {
             let scalars: Vec<&[u64; 4]> = scalars_fr_repr.iter().map(|s| &s.0).collect();
 
             let mut desired_result = G2::zero();
+            #[allow(clippy::needless_range_loop)]
             for i in 0..num_points {
                 desired_result.add_assign(&points[i].into_projective());
             }
@@ -1021,6 +1024,7 @@ fn test_g2_sum_of_products() {
             let scalars: Vec<&[u64; 4]> = scalars_fr_repr.iter().map(|s| &s.0).collect();
 
             let mut desired_result = G2::zero();
+            #[allow(clippy::needless_range_loop)]
             for i in 0..num_points {
                 if i % 2 == 1 {
                     desired_result.add_assign(&points[i].into_projective());

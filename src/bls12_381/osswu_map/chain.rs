@@ -912,7 +912,7 @@ mod tests {
         for _ in 0..32 {
             let mut input = Fq::random(&mut rng);
             chain_pm3div4(&mut result, &input);
-            input = input.pow(&p_m3_over4);
+            input = input.pow(p_m3_over4);
             assert_eq!(input, result);
         }
     }
@@ -942,7 +942,7 @@ mod tests {
         for _ in 0..32 {
             let mut input = Fq2::random(&mut rng);
             chain_p2m9div16(&mut result, &input);
-            input = input.pow(&p_sq_m9_over16);
+            input = input.pow(p_sq_m9_over16);
             assert_eq!(input, result);
         }
     }

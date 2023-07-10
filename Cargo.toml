@@ -10,7 +10,7 @@ authors = [
     "Jack Grigg <jack@z.cash>",
     # maintainers of this pairing-fork library
     "Riad S. Wahby <kwantam@gmail.com>",
-    "Zhenfei Zhang <zhenfei@algorand.com>"
+    "Zhenfei Zhang <zhenfei@algorand.com>",
 ]
 license = "MIT"
 
@@ -32,10 +32,10 @@ homepage = "https://github.com/algorand/pairing-plus"
 repository = "https://github.com/algorand/pairing-plus"
 
 [dependencies]
-rand = "0.4"
+rand = "0.8"
 byteorder = "1"
-ff-zeroize = { version = "0.6.3", features = ["derive"]}
-zeroize = { version  = "1.1", features = ["zeroize_derive"]}
+ff-zeroize = { version = "0.6.3", features = ["derive"] }
+zeroize = { version = "1.1", features = ["zeroize_derive"] }
 rand_core = "0.5"
 rand_xorshift = "0.2"
 
